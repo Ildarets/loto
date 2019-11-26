@@ -43,15 +43,13 @@ class Card:
                 i = ' '
             self.full_card_str.append(str(i))
 
-        for i in range(1, 4):
-            self.full_card_ready.append(self.full_card_str[0*i:5*i])
 
         self.full_card_ready.append(self.full_card_str[0:10])
         self.full_card_ready.append(self.full_card_str[10:20])
         self.full_card_ready.append(self.full_card_str[20:30])
 
-        return self.card_list, self.index_card, self.full_card, len(self.card_list), len(self.index_card), len(
-            self.full_card), self.full_card_str,self.full_card_ready
+
+        return self.full_card_ready[0], self.full_card_ready[1], self.full_card_ready[2]
 
 
 
@@ -60,5 +58,5 @@ class Card:
 
 
 card1 = Card()
-print(card1.card_full())
+print(*card1.card_full())
 # print(card1.card_const())
