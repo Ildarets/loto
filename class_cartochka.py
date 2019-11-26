@@ -49,7 +49,15 @@ class Card:
         self.full_card_ready.append(self.full_card_str[20:30])
 
 
-        return self.full_card_ready[0], self.full_card_ready[1], self.full_card_ready[2]
+        return self.full_card_ready
+
+
+    def print_card(self):
+        print('-' * 25)
+        print(*self.card_full()[0])
+        print(*self.card_full()[1])
+        print(*self.card_full()[2])
+        print('-' * 25)
 
 
 
@@ -58,5 +66,6 @@ class Card:
 
 
 card1 = Card()
-print(*card1.card_full())
+card1.print_card()
+print(card1.card_full())
 # print(card1.card_const())
