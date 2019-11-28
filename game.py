@@ -11,6 +11,7 @@ card_list_comp = card_comp.card_list()
 
 
 pol = []
+o  = []
 
 flag = True
 
@@ -34,25 +35,24 @@ while len(pol) != 90:
     print(bochonok)
     print("Зачеркнуть или продолжить? ")
 
-    answer = input("Введите y/n")
+    answer = input("Введите y/n:  ")
 
-    for n, i in enumerate(card_list_player):
-        if i == bochonok:
-            if answer == 'y':
+    o.append(answer)
+
+    if answer == 'y':
+        for n, i in enumerate(card_list_player):
+            if i == bochonok:
                 card_list_player[n] = '--'
-            elif answer == 'n':
-                flag = False
-                print(flag)
+            else:
                 break
-        elif i != bochonok:
-            if answer == 'y':
-                flag = False
-                break
-            elif answer == 'n':
-                continue
-    for n, j in enumerate(card_list_player):
-        if j == bochonok:
-            card_list_player[n] = '--'
+    elif answer == 'n':
+        for n, i in enumerate(card_list_player):
+            if i == bochonok:
+                print("Game Over")
+    else:
+        print("Введите y / n")
+
+
 
     for n, j in enumerate(card_list_comp):
         if j == bochonok:
@@ -60,6 +60,7 @@ while len(pol) != 90:
 
     print(card_list_player)
     print(card_list_comp)
+    print(o)
 
 
 
