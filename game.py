@@ -36,54 +36,35 @@ while len(pol) != 90:
     print("Зачеркнуть или продолжить? ")
 
     answer = input("Введите y/n:  ")
+    while answer != 'y' or answer != 'n':
+        if answer=='y' or answer=='n':
+            break
+        answer = input("Введите y/n:  ")
 
-    # while answer != 'n' or answer !='y':
-    #     answer = input("Введите y/n:  ")
-    #     continue
+
 
     o.append(answer)
 
-    # for n, i in enumerate(card_list_player):
-    #     if i == bochonok:
-    #         if answer == 'y':
-    #             card_list_player[n] = '--'
-    #         elif answer == 'n':
-    #             flag = False
-    #             break
-    #     elif i != bochonok:
-    #         if answer == 'y':
-    #             flag = False
-    #             break
-
-
-
-    if answer == 'y':
-        for n, i in enumerate(card_list_player):
-            if i == bochonok:
-                card_list_player[n] = '--'
-            elif i != bochonok:
-                flag = False
-
-        if flag == False:
-            break
-    elif answer == 'n':
-        for n, i in enumerate(card_list_player):
-            if i == bochonok:
-                print("Game Over")
-                flag = False
-
-        if flag == False:
+    if bochonok in card_list_player:
+        if answer == 'y':
+            for n, i in enumerate(card_list_player):
+                if i == bochonok:
+                    card_list_player[n] = '--'
+        elif answer == 'n':
+            flag = False
             break
     else:
-        print("Введите y / n")
+        if answer == 'y':
+            flag = False
+            break
 
 
 
     for n, j in enumerate(card_list_comp):
         if j == bochonok:
             card_list_comp[n] = '--'
-        else:
-            print("Game Over")
+        # else:
+        #     print("Game Over")
 
     print(card_list_player)
     print(card_list_comp)
@@ -97,11 +78,3 @@ if flag == False:
 else:
     print("Игрок выиграл! Компьютер проиграл")
 
-
-# print(card_list_player)
-
-# card_comp.card_str()
-#
-# card_player.card_str()
-# print(pol)
-# print(len(pol))
