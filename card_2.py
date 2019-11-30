@@ -32,14 +32,6 @@ class Kartochki:
                 self.list_card.append(number)
         return self.list_card
 
-    # def index_card(self):
-    #     while len(self.index_str) != 5:  # генерируем числа от 0 до 8, которые будут индексами в строке
-    #         ind = random.randint(0, 8)
-    #         if ind in self.index_str:
-    #             continue
-    #         else:
-    #             self.index_str.append(ind)
-    #     return self.index_str
 
 
     def card_str(self):
