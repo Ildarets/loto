@@ -32,6 +32,8 @@ class Kartochki:
                 self.list_card.append(number)
         return self.list_card
 
+
+
     def card_str(self):
         # делаем из списка карточу
         list_c = []
