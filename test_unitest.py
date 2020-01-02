@@ -1,5 +1,6 @@
 import unittest
 from card_2 import Kartochki
+from class_Gamer import Gamer
 
 class TestKartochki(unittest.TestCase):
     def setUp(self):
@@ -27,4 +28,15 @@ class TestKartochki(unittest.TestCase):
         self.assertEqual(len(self.card.list_f[2]), 9)
 
 
+class Test_Gamer(unittest.TestCase):
+    def setUp(self):
+        self.gamer = Gamer(2,2)
 
+    def tearDown(self):
+        del self.gamer
+
+    def test_init(self):
+        self.assertEqual(self.gamer.list_card_gamer, [])
+
+    def test_creat_card(self):
+        self.assertEqual(len(self.gamer.list_card_gamer), 0)

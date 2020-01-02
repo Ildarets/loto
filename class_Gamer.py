@@ -1,4 +1,3 @@
-import random
 from card_2 import Kartochki
 
 class Gamer():
